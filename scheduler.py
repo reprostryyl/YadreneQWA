@@ -12,7 +12,6 @@ def _warmup_lr(base_lr, warmup_length, step):
 
 def cosine_lr(optimizer, base_lr, warmup_length, steps):
     def _lr_adjuster(step):
-        if step < warmup_length:
             lr = _warmup_lr(base_lr, warmup_length, step)
         else:
             e = step - warmup_length
